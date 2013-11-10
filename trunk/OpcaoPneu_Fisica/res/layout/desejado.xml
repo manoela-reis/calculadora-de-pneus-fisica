@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <RadioButton
+        android:id="@+id/largura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/altura"
+        android:layout_marginLeft="14dp"
+        android:text="Largura" />
+
+    <RadioButton
+        android:id="@+id/velmax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/largura"
+        android:layout_marginLeft="14dp"
+        android:text="Letra da velocidade máxima" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/diametro"
+        android:layout_alignParentTop="true"
+        android:text="O que deseja mudar?"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp" />
+
+    <RadioButton
+        android:id="@+id/diametro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/altura"
+        android:layout_below="@+id/textView1"
+        android:text="Diâmetro" />
+
+    <Button
+        android:id="@+id/calcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_marginRight="30dp"
+        android:clickable="false"
+        android:text="Calcular" />
+
+    <RadioButton
+        android:id="@+id/altura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/largura"
+        android:layout_below="@+id/diametro"
+        android:text="Altura" />
+
+    <RadioButton
+        android:id="@+id/cargamax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toRightOf="@+id/diametro"
+        android:text="Nº da carga máxima" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/insiravalor"
+        android:layout_alignRight="@+id/calcular"
+        android:text="Valor"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/insiravalor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/calcular"
+        android:layout_alignTop="@+id/largura"
+        android:clickable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:text="Insira um valor" >
+
+        <requestFocus />
+    </MultiAutoCompleteTextView>
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="oi">1</integer>
+    <integer name="tres">3</integer>
+    <integer name="dos">2</integer>
+</resources>
