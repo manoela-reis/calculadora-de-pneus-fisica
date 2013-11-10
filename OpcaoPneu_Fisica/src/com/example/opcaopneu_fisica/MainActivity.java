@@ -21,6 +21,13 @@ public class MainActivity extends Activity {
 		startActivity(i);
 	}
 	
+	public void creditos(View sender){
+		
+		Intent i = new Intent();
+		i.setClass(this, Creditos.class);
+		startActivity(i);
+	}
+	
 
 
 }
