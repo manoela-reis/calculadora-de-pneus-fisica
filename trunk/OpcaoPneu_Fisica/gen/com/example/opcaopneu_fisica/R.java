@@ -36,24 +36,25 @@ public final class R {
         public static final int TextView03=0x7f09000a;
         public static final int TextView04=0x7f09000b;
         public static final int TextView05=0x7f09000c;
-        public static final int action_settings=0x7f090018;
-        public static final int altura=0x7f09000e;
+        public static final int action_settings=0x7f090019;
+        public static final int altura=0x7f09000f;
         public static final int calcular=0x7f090007;
         public static final int cargamax=0x7f090011;
-        public static final int content=0x7f090015;
-        public static final int creditos=0x7f090013;
-        public static final int diametro=0x7f090010;
+        public static final int content=0x7f090016;
+        public static final int creditos=0x7f090014;
+        public static final int diametro=0x7f09000e;
         public static final int editText1=0x7f090002;
         public static final int editText2=0x7f090004;
         public static final int editText3=0x7f090005;
-        public static final int handle=0x7f090016;
-        public static final int insiravalor=0x7f090012;
-        public static final int largura=0x7f09000d;
-        public static final int slidingDrawer1=0x7f090014;
+        public static final int handle=0x7f090017;
+        public static final int insiravalor=0x7f090013;
+        public static final int largura=0x7f090010;
+        public static final int slidingDrawer1=0x7f090015;
         public static final int textView1=0x7f090008;
         public static final int textView2=0x7f090003;
-        public static final int textView3=0x7f090017;
-        public static final int velmax=0x7f09000f;
+        public static final int textView3=0x7f090018;
+        public static final int tipos=0x7f09000d;
+        public static final int velmax=0x7f090012;
     }
     public static final class integer {
         public static final int dos=0x7f050002;
