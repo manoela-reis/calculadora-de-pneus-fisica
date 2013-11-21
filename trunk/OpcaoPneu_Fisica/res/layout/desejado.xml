@@ -8,53 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <RadioGroup
-        android:id="@+id/tipos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <RadioButton
-            android:id="@+id/diametro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/altura"
-            android:layout_below="@+id/textView1"
-            android:text="Diâmetro" />
-
-        <RadioButton
-            android:id="@+id/altura"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/largura"
-            android:layout_below="@+id/diametro"
-            android:text="Altura" />
-
-        <RadioButton
-            android:id="@+id/cargamax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView2"
-            android:layout_alignBottom="@+id/textView2"
-            android:layout_toRightOf="@+id/diametro"
-            android:text="Nº da carga máxima" />
-
-        <RadioButton
-            android:id="@+id/velmax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tipos"
-            android:layout_below="@+id/tipos"
-            android:text="Letra da velocidade máxima" />
-
-        <RadioButton
-            android:id="@+id/largura"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/velmax"
-            android:layout_below="@+id/velmax"
-            android:text="Largura" />
-    </RadioGroup>
-
     <Button
         android:id="@+id/calcular"
         android:layout_width="wrap_content"
@@ -63,6 +16,7 @@
         android:layout_below="@+id/textView1"
         android:layout_marginRight="28dp"
         android:enabled="false"
+        android:onClick="calcula"
         android:text="Calcular" />
 
     <TextView
@@ -85,17 +39,37 @@
         android:text="Valor"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <MultiAutoCompleteTextView
-        android:id="@+id/insiravalor"
+    <EditText
+        android:id="@+id/altura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/calcular"
+        android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/textView2"
+        android:layout_marginTop="15dp"
         android:ems="10"
-        android:enabled="false"
-        android:text="Insira um valor" >
+        android:inputType="number"
+        android:maxLength="@integer/dos" >
 
         <requestFocus />
-    </MultiAutoCompleteTextView>
+    </EditText>
+
+    <RadioButton
+        android:id="@+id/diametroo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/calcular"
+        android:layout_alignLeft="@+id/tipos"
+        android:onClick="diametro"
+        android:text="Diâmetro" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/altura"
+        android:layout_toLeftOf="@+id/textView1"
+        android:enabled="false"
+        android:text="Resultado"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

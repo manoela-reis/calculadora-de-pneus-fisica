@@ -4,23 +4,24 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.Toast;
 
 public class Desejado extends Activity {
 
 	Button botao;
 	RadioButton diametro;
-	RadioButton altura;
-	RadioButton largura;
-	RadioButton velmax;
-	RadioButton cargamax;
 	EditText insiravalue;
-	RadioGroup tipos;
+	double polegadasDiam;
+	double alturaELarg;
+	double percentAlt;
+	double somaParcial;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,36 +44,39 @@ public class Desejado extends Activity {
 		initialize();
 	}
 
-	public OnCheckedChangeListener oi(RadioGroup tipos) {
-
-		/*
-		 * if(diametro.isChecked()){
-		 * 
-		 * insiravalue.setEnabled(true); insiravalue.setText(" "); }
-		 */
-		return null;
-
-	}
 
 	private void initialize() {
-
-		tipos = (RadioGroup) findViewById(R.id.tipos);
-		tipos.setOnCheckedChangeListener(oi(tipos));
-		diametro = (RadioButton) findViewById(R.id.diametro);
-		botao = (Button) findViewById(R.id.calcular);
-		altura = (RadioButton) findViewById(R.id.altura);
-		largura = (RadioButton) findViewById(R.id.largura);
-		velmax = (RadioButton) findViewById(R.id.velmax);
-		cargamax = (RadioButton) findViewById(R.id.cargamax);
-		insiravalue = (EditText) findViewById(R.id.insiravalor);
-
+		
+		diametro = (RadioButton) findViewById(R.id.diametroo);
+		botao = (Button) findViewById(R.id.calcular);	
+		insiravalue = (EditText) findViewById(R.id.altura);
 	}
 
 	public void insira2(View v) {
-
 		Intent i = new Intent();
 		i.setClass(this, Desejado.class);
 		startActivity(i);
+	}
+	public void diametro(View v) {
+		botao.setEnabled(true);
+	}
+	public void calcula(View v) {
+		
+		 polegadasDiam = Calculate.getDiametro() * 25.4;
+		 percentAlt = Calculate.getAltura()/100;
+		 alturaELarg = (Calculate.getLargura() * percentAlt) * 2;
+		 somaParcial = polegadasDiam + alturaELarg;
+		 
+		 //Log.i("oi", Double.toString(somaParcial));
+		 Toast.makeText(getApplicationContext(), Double.toString(percentAlt), Toast.LENGTH_SHORT).show();
+			
+		 
+		/*if(insiravalue.getText() != null){
+			
+			Toast.makeText(getApplicationContext(), Double.toString(somaParcial), Toast.LENGTH_SHORT).show();
+		}*/
+		
+		
 	}
 
 }
