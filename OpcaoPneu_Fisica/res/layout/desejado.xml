@@ -33,10 +33,9 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/calcular"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="22dp"
-        android:text="Valor"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="Quanto a mais você deseja aumenta?"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -48,7 +47,7 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="number"
-        android:maxLength="@integer/dos" >
+        android:maxLength="@integer/oi" >
 
         <requestFocus />
     </EditText>
@@ -66,8 +65,8 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/altura"
-        android:layout_toLeftOf="@+id/textView1"
+        android:layout_alignLeft="@+id/diametroo"
+        android:layout_below="@+id/diametroo"
         android:enabled="false"
         android:text="Resultado"
         android:textAppearance="?android:attr/textAppearanceMedium" />

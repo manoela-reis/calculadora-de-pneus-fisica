@@ -28,6 +28,9 @@ public class Desejado extends Activity {
 	int newDiam;
 	private double somaParcial2;
 	private double diferençaFinal;
+	private int novaAltura;
+	private int novaLarg;
+	private int novaAltura2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +53,28 @@ public class Desejado extends Activity {
 
 	public void calcula(View v) {
 
-		polegadasDiam = Calculate.getDiametro() * 25.4;
+		/*for(int i = 100; i <= 400; i+=5){
+			for(int j = 10; j <=100; j+=5){
+				if(diamVl - diamNV <= 2){//percent
+					int temp = diamVL-diamNV;
+				}
+				}
+			}
+		}*/
+		
+		
+		
+/*		polegadasDiam = Calculate.getDiametro() * 25.4;
 		alturaELarg = ((Calculate.getLargura() * Calculate.getAltura()) / 100) * 2;
 		somaParcial = polegadasDiam + alturaELarg;
 
+		
 		newDiam = Integer.parseInt(insiravalue.getText().toString());
-		polegadasDiam2 = newDiam * 25.4;
-		somaParcial2 = polegadasDiam2 + alturaELarg;
+	//1ºopcao
+		novaLarg = Calculate.getLargura() + (newDiam * 10);
+		novaAltura = Calculate.getAltura() - (newDiam * 10);
+	//2ºopcao
+		novaAltura2 = Calculate.getAltura() - (newDiam * 10);
 
 		if (somaParcial >= somaParcial2) {
 
@@ -81,7 +99,7 @@ public class Desejado extends Activity {
 					Toast.LENGTH_SHORT).show();
 		}
 
-		/*
+		
 		 * if(insiravalue.getText() != null){
 		 * 
 		 * Toast.makeText(getApplicationContext(), Double.toString(somaParcial),

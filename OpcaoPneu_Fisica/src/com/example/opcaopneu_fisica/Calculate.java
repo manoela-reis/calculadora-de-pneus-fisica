@@ -11,6 +11,7 @@ public class Calculate extends Activity {
 	static int larg;
 	static int alt;
 	static int diam;
+
 	
 	static EditText largura;
 	static EditText altura;
