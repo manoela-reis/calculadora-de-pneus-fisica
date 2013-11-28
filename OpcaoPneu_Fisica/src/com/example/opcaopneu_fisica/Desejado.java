@@ -31,6 +31,7 @@ public class Desejado extends Activity {
 	private int novaAltura;
 	private int novaLarg;
 	private int novaAltura2;
+	public Calculate calculate;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,29 +54,29 @@ public class Desejado extends Activity {
 
 	public void calcula(View v) {
 
-		/*for(int i = 100; i <= 400; i+=5){
-			for(int j = 10; j <=100; j+=5){
-				if(diamVl - diamNV <= 2){//percent
-					int temp = diamVL-diamNV;
-				}
-				}
-			}
-		}*/
-		
-		
-		
-/*		polegadasDiam = Calculate.getDiametro() * 25.4;
+		polegadasDiam = Calculate.getDiametro() * 25.4;
 		alturaELarg = ((Calculate.getLargura() * Calculate.getAltura()) / 100) * 2;
 		somaParcial = polegadasDiam + alturaELarg;
 
-		
 		newDiam = Integer.parseInt(insiravalue.getText().toString());
-	//1ºopcao
-		novaLarg = Calculate.getLargura() + (newDiam * 10);
-		novaAltura = Calculate.getAltura() - (newDiam * 10);
-	//2ºopcao
-		novaAltura2 = Calculate.getAltura() - (newDiam * 10);
 
+		//1ºopção
+		if (calculate.opcao == 2) {
+			novaLarg = Calculate.getLargura();
+			novaAltura = Calculate.getAltura() - (newDiam * 5);
+			Toast.makeText(getApplicationContext(), 
+					Double.toString(novaAltura), Toast.LENGTH_SHORT).show();
+		}
+		
+		//2ºopção
+		if (calculate.opcao == 1) {
+			novaLarg = Calculate.getLargura() + (newDiam *10);
+			novaAltura2 =  Calculate.getAltura() - (5 + (newDiam *5));
+			Toast.makeText(getApplicationContext(), 
+					Double.toString(novaAltura2), Toast.LENGTH_SHORT).show();
+		}
+		
+		/*
 		if (somaParcial >= somaParcial2) {
 
 			diferençaFinal = somaParcial - somaParcial2;
@@ -85,12 +86,11 @@ public class Desejado extends Activity {
 			diferençaFinal = somaParcial2 - somaParcial;
 		}
 
-		percent = (diferençaFinal * 100) / somaParcial;
+		percent = (diferençaFinal * 100) / somaParcial;*/
 
-		Toast.makeText(getApplicationContext(),
-				Double.toString(diferençaFinal), Toast.LENGTH_SHORT).show();
+		
 
-		if (percent <= 2) {
+		/*if (percent <= 2) {
 			Toast.makeText(getApplicationContext(), "é possível",
 					Toast.LENGTH_SHORT).show();
 		} else {
@@ -99,12 +99,11 @@ public class Desejado extends Activity {
 					Toast.LENGTH_SHORT).show();
 		}
 
-		
-		 * if(insiravalue.getText() != null){
-		 * 
-		 * Toast.makeText(getApplicationContext(), Double.toString(somaParcial),
-		 * Toast.LENGTH_SHORT).show(); }
-		 */
+		if (insiravalue.getText() != null) {
+
+			Toast.makeText(getApplicationContext(),
+					Double.toString(somaParcial), Toast.LENGTH_SHORT).show();
+		}*/
 
 	}
 
