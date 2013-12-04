@@ -27,11 +27,13 @@ public class Desejado extends Activity {
 
 	int newDiam;
 	private double somaParcial2;
-	private double diferençaFinal;
 	private int novaAltura;
 	private int novaLarg;
 	private int novaAltura2;
 	public Calculate calculate;
+	private int alturaELarg2;
+	private int alturaELarg3;
+	private double somaParcial3;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class Desejado extends Activity {
 		diametro = (RadioButton) findViewById(R.id.diametroo);
 		botao = (Button) findViewById(R.id.calcular);
 		insiravalue = (EditText) findViewById(R.id.valor);
+
 	}
 
 	public void diametro(View v) {
@@ -53,58 +56,66 @@ public class Desejado extends Activity {
 	}
 
 	public void calcula(View v) {
-
-		polegadasDiam = Calculate.getDiametro() * 25.4;
-		alturaELarg = ((Calculate.getLargura() * Calculate.getAltura()) / 100) * 2;
-		somaParcial = polegadasDiam + alturaELarg;
-
 		newDiam = Integer.parseInt(insiravalue.getText().toString());
 
-		//1ºopção
-		if (calculate.opcao == 2) {
-			novaLarg = Calculate.getLargura();
-			novaAltura = Calculate.getAltura() - (newDiam * 5);
-			Toast.makeText(getApplicationContext(), 
-					Double.toString(novaAltura), Toast.LENGTH_SHORT).show();
+		if (newDiam > 0 && newDiam <= 4) {
+
+			// 1conta
+			polegadasDiam = Calculate.getDiametro() * 25.4;
+			alturaELarg = ((Calculate.getLargura() * Calculate.getAltura()) / 100) * 2;
+			somaParcial = polegadasDiam + alturaELarg;
+
+			// 2conta
+			polegadasDiam2 = (newDiam + Calculate.getDiametro()) * 25.4;
+
+			// 1ºopção
+			if (calculate.opcao == 1) {
+				novaLarg = Calculate.getLargura();
+				novaAltura = Calculate.getAltura() - (newDiam * 5);
+
+				alturaELarg2 = ((novaLarg * novaAltura) / 100) * 2;
+				somaParcial2 = polegadasDiam2 + alturaELarg2;
+				Toast.makeText(getApplicationContext(), Double.toString(somaParcial2) + " op1",
+						Toast.LENGTH_SHORT).show();
+
+			}
+
+			// 2ºopção
+			if (calculate.opcao == 2) {
+				novaLarg = Calculate.getLargura() + (newDiam * 10);
+				novaAltura2 = Calculate.getAltura() - (5 + (newDiam * 5));
+
+				alturaELarg3 = ((novaLarg * novaAltura2) / 100) * 2;
+				somaParcial3 = polegadasDiam2 + alturaELarg3;
+				Toast.makeText(getApplicationContext(), Double.toString(somaParcial3) +" op2",
+						Toast.LENGTH_SHORT).show();
+
+			}
+
+			/*
+			 * if (somaParcial >= somaParcial2) {
+			 * 
+			 * diferençaFinal = somaParcial - somaParcial2; } if (somaParcial <
+			 * somaParcial2) {
+			 * 
+			 * diferençaFinal = somaParcial2 - somaParcial; }
+			 * 
+			 * percent = (diferençaFinal * 100) / somaParcial;
+			 */
+
+			/*
+			 * if (percent <= 2) { Toast.makeText(getApplicationContext(),
+			 * "é possível", Toast.LENGTH_SHORT).show(); } else {
+			 * 
+			 * Toast.makeText(getApplicationContext(), "não é possível",
+			 * Toast.LENGTH_SHORT).show(); }
+			 * 
+			 * if (insiravalue.getText() != null) {
+			 * 
+			 * Toast.makeText(getApplicationContext(),
+			 * Double.toString(somaParcial), Toast.LENGTH_SHORT).show(); }
+			 */
+
 		}
-		
-		//2ºopção
-		if (calculate.opcao == 1) {
-			novaLarg = Calculate.getLargura() + (newDiam *10);
-			novaAltura2 =  Calculate.getAltura() - (5 + (newDiam *5));
-			Toast.makeText(getApplicationContext(), 
-					Double.toString(novaAltura2), Toast.LENGTH_SHORT).show();
-		}
-		
-		/*
-		if (somaParcial >= somaParcial2) {
-
-			diferençaFinal = somaParcial - somaParcial2;
-		}
-		if (somaParcial < somaParcial2) {
-
-			diferençaFinal = somaParcial2 - somaParcial;
-		}
-
-		percent = (diferençaFinal * 100) / somaParcial;*/
-
-		
-
-		/*if (percent <= 2) {
-			Toast.makeText(getApplicationContext(), "é possível",
-					Toast.LENGTH_SHORT).show();
-		} else {
-
-			Toast.makeText(getApplicationContext(), "não é possível",
-					Toast.LENGTH_SHORT).show();
-		}
-
-		if (insiravalue.getText() != null) {
-
-			Toast.makeText(getApplicationContext(),
-					Double.toString(somaParcial), Toast.LENGTH_SHORT).show();
-		}*/
-
 	}
-
 }
