@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Calculate extends Activity {
 	static int larg;
@@ -67,8 +68,12 @@ public class Calculate extends Activity {
 		if (getAltura() >= 25 && getAltura() <= 90) {
 			if (getAltura() % 10 == 0) {
 				opcao = 1;
+				Toast.makeText(getApplicationContext(), "op1", Toast.LENGTH_SHORT).show();
+
 			} else if (getAltura() % 5 == 0) {
 				opcao = 2;
+				Toast.makeText(getApplicationContext(), "op2", Toast.LENGTH_SHORT).show();
+
 			}
 		}
 		return opcao;
