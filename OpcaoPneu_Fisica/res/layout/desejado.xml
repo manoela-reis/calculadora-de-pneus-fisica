@@ -9,7 +9,7 @@
     tools:context=".MainActivity" >
 
     <Button
-        android:id="@+id/calcular"
+        android:id="@+id/calcular1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -56,7 +56,7 @@
         android:id="@+id/diametroo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/calcular"
+        android:layout_alignBottom="@+id/calcular1"
         android:layout_alignLeft="@+id/tipos"
         android:onClick="diametro"
         android:text="Diâmetro" />
@@ -70,5 +70,14 @@
         android:enabled="false"
         android:text="Resultado"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/valor"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_toLeftOf="@+id/textView1" />
 
 </RelativeLayout>

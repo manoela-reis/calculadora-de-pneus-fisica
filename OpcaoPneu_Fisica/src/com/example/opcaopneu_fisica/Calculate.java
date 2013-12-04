@@ -17,7 +17,7 @@ public class Calculate extends Activity {
 	static EditText largura;
 	static EditText altura;
 	static EditText diametro;
-	public static int opcao;
+	public static int opcao = 2;
 	static Context cont;
 
 	@Override
@@ -28,6 +28,7 @@ public class Calculate extends Activity {
 		altura = (EditText) findViewById(R.id.altura);
 		diametro = (EditText) findViewById(R.id.diametroo);
 		cont = this;
+		
 
 	}
 
@@ -35,8 +36,9 @@ public class Calculate extends Activity {
 
 		Intent i = new Intent();
 		i.setClass(this, Desejado.class);
-
-		if (getOpcaoUser() == 1 || getOpcaoUser() == 2) {
+		
+		
+		if (opcao== 1 || opcao== 2) {
 			startActivity(i);
 		} else {
 			DialogHelper.message(cont,
@@ -63,16 +65,16 @@ public class Calculate extends Activity {
 		return diam;
 	}
 
-	public int getOpcaoUser() {
+	public static int getOpcaoUser() {
 		
 		if (getAltura() >= 25 && getAltura() <= 90) {
 			if (getAltura() % 10 == 0) {
 				opcao = 1;
-				Toast.makeText(getApplicationContext(), "op1", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getApplicationContext(), "op1", Toast.LENGTH_SHORT).show();
 
 			} else if (getAltura() % 5 == 0) {
 				opcao = 2;
-				Toast.makeText(getApplicationContext(), "op2", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getApplicationContext(), "op2", Toast.LENGTH_SHORT).show();
 
 			}
 		}

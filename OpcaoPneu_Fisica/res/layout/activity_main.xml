@@ -60,10 +60,10 @@
     </EditText>
 
     <Button
-        android:id="@+id/calcular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
+        android:id="@+id/calcular1"
+        android:layout_width="106dp"
+        android:layout_height="82dp"
+        android:layout_weight="0.07"
         android:onClick="insira2"
         android:text="Agora insira a mudança desejada" />
 
