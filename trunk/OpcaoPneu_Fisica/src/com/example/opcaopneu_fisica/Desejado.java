@@ -34,6 +34,9 @@ public class Desejado extends Activity {
 	private int alturaELarg2;
 	private int alturaELarg3;
 	private double somaParcial3;
+	private Boolean possivel;
+	private double diferençaFinal;
+	EditText resultado;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +49,9 @@ public class Desejado extends Activity {
 	private void initialize() {
 
 		diametro = (RadioButton) findViewById(R.id.diametroo);
-		botao = (Button) findViewById(R.id.calcular);
+		botao = (Button) findViewById(R.id.calcular1);
 		insiravalue = (EditText) findViewById(R.id.valor);
+		resultado = (EditText) findViewById(R.id.result);
 
 	}
 
@@ -55,7 +59,7 @@ public class Desejado extends Activity {
 		botao.setEnabled(true);
 	}
 
-	public void calcula(View v) {
+	public void calcular(View v) {
 		newDiam = Integer.parseInt(insiravalue.getText().toString());
 
 		if (newDiam > 0 && newDiam <= 4) {
@@ -77,6 +81,14 @@ public class Desejado extends Activity {
 				somaParcial2 = polegadasDiam2 + alturaELarg2;
 				Toast.makeText(getApplicationContext(), Double.toString(somaParcial2) + " op1",
 						Toast.LENGTH_SHORT).show();
+				CalculatePossibility1();
+				
+				if(possivel==true){
+					resultado.setText(Double.toString(novaLarg) + " / " + Double.toString(novaAltura) + " / " + Double.toString(newDiam + Calculate.getDiametro()) );
+				}else{
+					Toast.makeText(getApplicationContext(),"De acordo com a legislação brasileira, não é possível utilizar essa nova medida no seu carro",
+							Toast.LENGTH_SHORT).show();
+				}
 
 			}
 
@@ -89,33 +101,57 @@ public class Desejado extends Activity {
 				somaParcial3 = polegadasDiam2 + alturaELarg3;
 				Toast.makeText(getApplicationContext(), Double.toString(somaParcial3) +" op2",
 						Toast.LENGTH_SHORT).show();
+				CalculatePossibility2();
+				
+				if(possivel==true){
+					resultado.setText(Double.toString(novaLarg) + " / " + Double.toString(novaAltura2) + " / " + Double.toString(newDiam + Calculate.getDiametro()) );
+				}else{
+					Toast.makeText(getApplicationContext(),"De acordo com a legislação brasileira, não é possível utilizar essa nova medida no seu carro",
+							Toast.LENGTH_SHORT).show();
+				}
 
 			}
 
-			/*
-			 * if (somaParcial >= somaParcial2) {
-			 * 
-			 * diferençaFinal = somaParcial - somaParcial2; } if (somaParcial <
-			 * somaParcial2) {
-			 * 
-			 * diferençaFinal = somaParcial2 - somaParcial; }
-			 * 
-			 * percent = (diferençaFinal * 100) / somaParcial;
-			 */
-
-			/*
-			 * if (percent <= 2) { Toast.makeText(getApplicationContext(),
-			 * "é possível", Toast.LENGTH_SHORT).show(); } else {
-			 * 
-			 * Toast.makeText(getApplicationContext(), "não é possível",
-			 * Toast.LENGTH_SHORT).show(); }
-			 * 
-			 * if (insiravalue.getText() != null) {
-			 * 
-			 * Toast.makeText(getApplicationContext(),
-			 * Double.toString(somaParcial), Toast.LENGTH_SHORT).show(); }
-			 */
-
+		}else{
+			Toast.makeText(getApplicationContext(),"De acordo com a legislação brasileira, não é possível utilizar essa nova medida no seu carro",
+					Toast.LENGTH_SHORT).show();
 		}
+		
+		
+	}
+	public Boolean CalculatePossibility1(){
+		if (somaParcial >= somaParcial2) {
+			 
+			 diferençaFinal = somaParcial - somaParcial2; 
+		}
+		if (somaParcial < somaParcial2) {
+			 diferençaFinal = somaParcial2 - somaParcial; 
+		}
+			 
+			 percent = (diferençaFinal * 100) / somaParcial;
+		if(percent <= 2){
+			possivel = true;
+		}else{
+			possivel= false;
+		}
+		return possivel;
+	}
+	
+	public Boolean CalculatePossibility2(){
+		if (somaParcial >= somaParcial3) {
+			 
+			 diferençaFinal = somaParcial - somaParcial3; 
+		}
+		if (somaParcial < somaParcial3) {
+			 diferençaFinal = somaParcial3 - somaParcial; 
+		}
+			 
+			 percent = (diferençaFinal * 100) / somaParcial;
+		if(percent <= 2){
+			possivel = true;
+		}else{
+			possivel= false;
+		}
+		return possivel;
 	}
 }
