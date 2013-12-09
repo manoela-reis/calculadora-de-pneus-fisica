@@ -61,7 +61,7 @@
                 android:text="Consultando o código de trânsito brasileiro, nos itens I e II do artigo 8 onde consta a resolução 292 do Denatran, é proibido tanto diminuir como também é proibido aumentar o diâmetro externo do conjunto roda/pneu. E ainda este conjunto não pode ultrapassar os limites externos dos para-lamas." />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/resultado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Em outras palavras é possível desde que seja mantido o diamentro externo do mesmo tamanho, ou seja, se você aumentar o tamanho do aro você terá que diminuir o perfil(altura) do pneu afim de manter o diâmetro externo sem alteração." />

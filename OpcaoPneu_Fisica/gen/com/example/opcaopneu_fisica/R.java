@@ -41,12 +41,12 @@ public final class R {
         public static final int diametroo=0x7f090004;
         public static final int handle=0x7f090012;
         public static final int largura=0x7f090000;
-        public static final int result=0x7f09000e;
+        public static final int result=0x7f09000d;
+        public static final int resultado=0x7f09000e;
         public static final int settings=0x7f090013;
         public static final int slidingDrawer1=0x7f090010;
         public static final int textView1=0x7f090006;
         public static final int textView2=0x7f090003;
-        public static final int textView3=0x7f09000d;
         public static final int tipos=0x7f09000b;
         public static final int valor=0x7f09000c;
     }
