@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/textView1"
-        android:text="Quanto a mais você deseja aumenta?"
+        android:text="Quanto a mais você deseja aumentar?"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -62,22 +62,22 @@
         android:text="Diâmetro" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/diametroo"
-        android:layout_below="@+id/diametroo"
-        android:enabled="false"
-        android:text="Resultado"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/valor"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/resultado"
+        android:layout_below="@+id/resultado"
         android:layout_toLeftOf="@+id/textView1" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/diametroo"
+        android:layout_alignTop="@+id/valor"
+        android:enabled="false"
+        android:text="Resultado"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

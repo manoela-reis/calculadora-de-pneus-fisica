@@ -28,18 +28,19 @@ public class Calculate extends Activity {
 		altura = (EditText) findViewById(R.id.altura);
 		diametro = (EditText) findViewById(R.id.diametroo);
 		cont = this;
-		
-
 	}
 
 	public void insira2(View v) {
 
 		Intent i = new Intent();
 		i.setClass(this, Desejado.class);
-		
-		
-		if (opcao== 1 || opcao== 2) {
-			startActivity(i);
+
+		if (getAltura() >= 25 && getAltura() <= 90) {
+			if (getDiametro() >= 13 && getDiametro() <= 24) {
+				if (opcao == 1 || opcao == 2) {
+					startActivity(i);
+				}
+			}
 		} else {
 			DialogHelper.message(cont,
 					"Valor da altura não válido! substitua por favor");
@@ -65,16 +66,18 @@ public class Calculate extends Activity {
 		return diam;
 	}
 
-	public static int getOpcaoUser() {
-		
+	public int getOpcaoUser() {
+
 		if (getAltura() >= 25 && getAltura() <= 90) {
 			if (getAltura() % 10 == 0) {
 				opcao = 1;
-				//Toast.makeText(getApplicationContext(), "op1", Toast.LENGTH_SHORT).show();
+				// Toast.makeText(getApplicationContext(), "op1",
+				// Toast.LENGTH_SHORT).show();
 
 			} else if (getAltura() % 5 == 0) {
 				opcao = 2;
-				//Toast.makeText(getApplicationContext(), "op2", Toast.LENGTH_SHORT).show();
+				// Toast.makeText(getApplicationContext(), "op2",
+				// Toast.LENGTH_SHORT).show();
 
 			}
 		}
